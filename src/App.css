@@ -1,3 +1,157 @@
-.App {
-  text-align: center;
+/* Header */
+
+header {
+  height: 10rem;
+  width: 100%;
+  background-color: #112d4e;
+  color: #f9f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__title {
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+.header__user-info {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.header__profile-pic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+/* Reviews */
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10px 10px 10px;
+}
+
+.review-card {
+  background: #dbe2ef;
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card__img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.review-card__title {
+  justify-content: space-around;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.review-card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.review-card_engagement-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.review-card__icon {
+  height: 30px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-card__btn {
+  height: 44px;
+  width: 80%;
+  margin: 12px 0 0;
+  grid-area: btn;
+  align-self: center;
+  justify-self: center;
+  background-color: #112d4e;
+  border-radius: 6px;
+  border-width: 0;
+  color: #f9f7f7;
+  font-size: 1.05rem;
+}
+
+@media only screen and (min-width: 600px) {
+  /* Header */
+
+  header {
+    height: 7rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header__title {
+    font-size: 2rem;
+    padding-left: 50px;
+  }
+
+  .header__user-info {
+    font-size: 1.5rem;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    padding-right: 50px;
+  }
+
+  /* Reviews */
+
+  .reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20px;
+  }
+
+  .review-card {
+    padding: 2rem;
+    display: grid;
+    grid-template-areas:
+      "title title"
+      "info img"
+      "btn engagement";
+  }
+
+  .review-card__img {
+    width: 400px;
+    height: 250px;
+    grid-area: img;
+  }
+
+  .review-card__title {
+    grid-area: title;
+  }
+
+  .review-card__info {
+    grid-area: info;
+  }
+
+  .review-card_engagement-stats {
+    grid-area: engagement;
+    justify-content: flex-end;
+    padding: 10px 50px 0 0;
+  }
 }
