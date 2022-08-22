@@ -96,6 +96,33 @@ header {
   font-size: 1.05rem;
 }
 
+.category-filter {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+  gap: 10px;
+}
+
+.category-filter__select {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.category-filter__btn {
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+  border-width: 0;
+  font-size: 1rem;
+}
+
+.category-filter__btn:hover {
+  background-color: #112d4e;
+  color: #f9f7f7;
+}
+
 @media only screen and (min-width: 600px) {
   /* Header */
 
@@ -153,5 +180,11 @@ header {
     grid-area: engagement;
     justify-content: flex-end;
     padding: 10px 50px 0 0;
+  }
+
+  .category-filter {
+    justify-content: flex-end;
+    margin: 1rem 2rem 1rem 0;
+    gap: 20px;
   }
 }
