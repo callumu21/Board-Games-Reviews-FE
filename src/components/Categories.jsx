@@ -23,7 +23,7 @@ export default function Categories() {
           navigate(`/reviews`);
           setCategory("");
         } else if (category) {
-          navigate(`/reviews/${category}`);
+          navigate(`/reviews/category/${category}`);
           setCategory("");
         }
       }}

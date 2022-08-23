@@ -1,7 +1,9 @@
 import { formatCategories, formatDate } from "../utils/formattingFunctions";
+import { useNavigate } from "react-router-dom";
 
 export default function ReviewCard({
   review: {
+    review_id,
     owner,
     category,
     review_img_url,
@@ -12,6 +14,8 @@ export default function ReviewCard({
     comment_count,
   },
 }) {
+  const navigate = useNavigate();
+
   return (
     <section className="review-card">
       <div className="review-card__title">
@@ -24,7 +28,14 @@ export default function ReviewCard({
         <p>Category: {formatCategories(category)}</p>
         <p>Designed by {designer}</p>
       </div>
-      <button className="review-card__btn">Read more!</button>
+      <button
+        className="review-card__btn"
+        onClick={() => {
+          navigate(`/reviews/${review_id}`);
+        }}
+      >
+        Read more!
+      </button>
       <div className="review-card_engagement-stats">
         <div className="review-card__comment flex-center">
           <img
