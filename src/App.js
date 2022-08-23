@@ -1,8 +1,10 @@
 import "./App.css";
 import Reviews from "./components/Reviews";
 import Header from "./components/Header";
+import CategoryReviews from "./components/CategoryReviews";
 import { useState } from "react";
 import { UserContext } from "./contexts/User";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
   const [user, setUser] = useState({
@@ -13,12 +15,21 @@ function App() {
   });
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
-      <div className="App">
-        <Header />
-        <Reviews className="reviews" />
-      </div>
-    </UserContext.Provider>
+    <BrowserRouter>
+      <UserContext.Provider value={{ user, setUser }}>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Navigate to="/reviews" />} />
+            <Route path="/reviews" element={<Reviews className="reviews" />} />
+            <Route
+              path="/reviews/:category"
+              element={<CategoryReviews className="reviews" />}
+            />
+          </Routes>
+        </div>
+      </UserContext.Provider>
+    </BrowserRouter>
   );
 }
 

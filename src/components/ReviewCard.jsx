@@ -29,7 +29,7 @@ export default function ReviewCard({
         <div className="review-card__comment flex-center">
           <img
             className="review-card__icon"
-            src="comment.png"
+            src="/comment.png"
             alt="comment button icon"
           ></img>
           <p>{comment_count}</p>
@@ -37,7 +37,7 @@ export default function ReviewCard({
         <div className="review-card__votes flex-center">
           <img
             className="review-card__icon"
-            src="like.png"
+            src="/like.png"
             alt="like button icon"
           ></img>
           <p>{votes}</p>
