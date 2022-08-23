@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviewById } from "../utils/api";
 import { formatDate, formatCategories } from "../utils/formattingFunctions";
+import VoteButton from "./VoteButton";
 
 export default function SingleReview() {
   const [review, setReview] = useState();
+  const [err, setErr] = useState(null);
   const { review_id } = useParams();
 
   useEffect(() => {
@@ -37,22 +39,24 @@ export default function SingleReview() {
         </div>
         <p className="single-review__body">{review.review_body}</p>
         <div className="single-review__engagement-stats">
-          <div className="single-review_comment flex-center">
-            <img
-              className="review-card__icon"
-              src="/comment.png"
-              alt="comment button icon"
-            ></img>
-            <p>{review.comment_count}</p>
+          <div className="single-review__engagement-stats-labels">
+            <div className="single-review_comment flex-center">
+              <img
+                className="review-card__icon"
+                src="/comment.png"
+                alt="comment button icon"
+              ></img>
+              <p>{review.comment_count}</p>
+            </div>
+            <VoteButton
+              review_id={review.review_id}
+              votes={review.votes}
+              setErr={setErr}
+            />
           </div>
-          <div className="single-review__votes flex-center">
-            <img
-              className="review-card__icon"
-              src="/like.png"
-              alt="like button icon"
-            ></img>
-            <p>{review.votes}</p>
-          </div>
+          <p className="single-review__engagement-stats-error error">
+            {err ? "It looks like your vote wasn't counted!" : ""}
+          </p>
         </div>
       </section>
     );

@@ -25,3 +25,10 @@ export const getCategories = async () => {
   const response = await gamesApi.get("categories");
   return response.data;
 };
+
+export const patchVotes = async (review_id, voteChange) => {
+  const response = await gamesApi.patch(`reviews/${review_id}`, {
+    inc_votes: voteChange,
+  });
+  return response.data;
+};
