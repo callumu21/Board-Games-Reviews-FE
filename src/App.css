@@ -28,6 +28,11 @@ header {
   border-radius: 50%;
 }
 
+a {
+  color: #f9f7f7;
+  text-decoration: none;
+}
+
 /* Reviews */
 
 .reviews {

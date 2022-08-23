@@ -17,7 +17,7 @@ export default function Reviews() {
       <Categories />
       <ul className="reviews">
         {reviews.map((review) => {
-          return <ReviewCard review={review} />;
+          return <ReviewCard review={review} key={review.review_id} />;
         })}
       </ul>
     </main>

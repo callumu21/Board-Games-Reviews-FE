@@ -19,8 +19,13 @@ export default function Categories() {
       className="category-filter"
       onSubmit={(event) => {
         event.preventDefault();
-        navigate(`/reviews/${category}`);
-        setCategory("");
+        if (category === "all") {
+          navigate(`/reviews`);
+          setCategory("");
+        } else if (category) {
+          navigate(`/reviews/${category}`);
+          setCategory("");
+        }
       }}
     >
       <select
@@ -33,6 +38,7 @@ export default function Categories() {
         <option value="" disabled>
           Category filter
         </option>
+        <option value="all">All</option>
         {categories.map((category) => {
           return (
             <option value={category.slug} key={category.slug}>

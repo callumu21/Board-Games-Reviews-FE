@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/User";
 
 export default function Header() {
@@ -6,9 +7,11 @@ export default function Header() {
 
   return (
     <header>
-      <div className="header__title">
-        <p>Board Game Reviews</p>
-      </div>
+      <Link to="/reviews">
+        <div className="header__title">
+          <p>Board Game Reviews</p>
+        </div>
+      </Link>
       <div className="header__user-info">
         <p>Welcome, {user.username}!</p>
         <img
