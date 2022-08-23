@@ -10,6 +10,11 @@ header {
   align-items: center;
 }
 
+.error {
+  color: red;
+  font-weight: bold;
+}
+
 .header__title {
   align-self: center;
   font-size: 1.2rem;
@@ -54,6 +59,7 @@ a {
   width: 100%;
   height: 100px;
   object-fit: cover;
+  justify-self: center;
 }
 
 .review-card__title {
@@ -70,11 +76,23 @@ a {
   font-size: 1rem;
 }
 
-.review-card_engagement-stats {
-  display: flex;
+.review-card__engagement-stats {
+  display: grid;
+  grid-template-areas:
+    "."
+    "error";
   justify-content: center;
+  margin-top: 20px;
+}
+
+.review-card__engagemenet-stats-labels {
+  display: flex;
   gap: 30px;
-  margin-top: 10px;
+}
+
+.review-card__engagement-stats-error {
+  align-self: center;
+  grid-area: error;
 }
 
 .review-card__icon {
@@ -100,6 +118,11 @@ a {
   color: #f9f7f7;
   font-size: 1.05rem;
   cursor: pointer;
+}
+
+.likes-button {
+  background-color: transparent;
+  border: none;
 }
 
 /* Category Filter */
@@ -157,10 +180,25 @@ a {
 }
 
 .single-review__engagement-stats {
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-areas:
+    "."
+    "error";
+  justify-content: center;
   margin-right: 20px;
-  gap: 20px;
+  column-gap: 20px;
+}
+
+.single-review__engagement-stats-error {
+  grid-area: error;
+  align-self: center;
+  font-size: 0.9rem;
+}
+
+.single-review__engagement-stats-labels {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 .single-review__category-link {
@@ -200,12 +238,12 @@ a {
   }
 
   .review-card {
-    padding: 2rem;
     display: grid;
     grid-template-areas:
       "title title"
       "info img"
-      "btn engagement";
+      "btn engagement"
+      ". error";
   }
 
   .review-card__img {
@@ -222,10 +260,17 @@ a {
     grid-area: info;
   }
 
-  .review-card_engagement-stats {
+  .review-card__engagement-stats {
     grid-area: engagement;
     justify-content: flex-end;
     padding: 10px 50px 0 0;
+  }
+
+  .review-card__engagement-stats-error {
+    grid-area: error;
+    justify-self: flex-end;
+    padding: 0 50px 0 0;
+    margin: 0px;
   }
 
   .category-filter {
@@ -243,7 +288,7 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "title title"
-      "author ."
+      "author img"
       "body img"
       "game engagement";
     column-gap: 30px;
@@ -251,6 +296,7 @@ a {
   }
 
   .single-review__img {
+    height: 100%;
     grid-area: img;
   }
 
@@ -265,16 +311,17 @@ a {
   }
 
   .single-review__body {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.5rem;
     grid-area: body;
   }
 
   .single-review__engagement-stats {
-    grid-area: engagement;
+    margin-top: 20px;
+    justify-content: flex-end;
   }
 
-  .single-review__game-info {
-    grid-area: game;
+  .single-review__engagement-stats-labels {
+    justify-content: flex-end;
   }
 }
