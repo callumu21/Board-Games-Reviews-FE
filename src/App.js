@@ -2,6 +2,7 @@ import "./App.css";
 import Reviews from "./components/Reviews";
 import Header from "./components/Header";
 import CategoryReviews from "./components/CategoryReviews";
+import SingleReview from "./components/SingleReview";
 import { useState } from "react";
 import { UserContext } from "./contexts/User";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -22,8 +23,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/reviews" />} />
             <Route path="/reviews" element={<Reviews className="reviews" />} />
+            <Route path="/reviews/:review_id" element={<SingleReview />} />
             <Route
-              path="/reviews/:category"
+              path="/reviews/category/:category"
               element={<CategoryReviews className="reviews" />}
             />
           </Routes>

@@ -5,18 +5,23 @@ const gamesApi = axios.create({
 });
 
 export const getReviews = async () => {
-  const reviews = await gamesApi.get("reviews");
-  return reviews.data;
+  const response = await gamesApi.get("reviews");
+  return response.data;
 };
 
 export const getReviewsByCategory = async (category) => {
-  const reviews = await gamesApi.get("reviews", {
+  const response = await gamesApi.get("reviews", {
     params: { category: category },
   });
-  return reviews.data;
+  return response.data;
+};
+
+export const getReviewById = async (id) => {
+  const response = await gamesApi.get(`reviews/${id}`);
+  return response.data.review;
 };
 
 export const getCategories = async () => {
-  const categories = await gamesApi.get("categories");
-  return categories.data;
+  const response = await gamesApi.get("categories");
+  return response.data;
 };
