@@ -1,3 +1,4 @@
+import "../styles/Categories.css";
 import { useEffect, useState } from "react";
 import { getCategories } from "../utils/api";
 import { formatCategories } from "../utils/formattingFunctions";

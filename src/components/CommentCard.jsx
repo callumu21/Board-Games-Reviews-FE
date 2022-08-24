@@ -1,3 +1,4 @@
+import "../styles/CommentSection.css";
 import { formatDate } from "../utils/formattingFunctions";
 
 export default function CommentCard({

@@ -1,7 +1,7 @@
+import "../styles/ReviewCard.css";
 import { formatCategories, formatDate } from "../utils/formattingFunctions";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import VoteButton from "../components/VoteButton";
+import ReviewEngagement from "../components/ReviewEngagement";
 
 export default function ReviewCard({
   review: {
@@ -16,7 +16,6 @@ export default function ReviewCard({
     comment_count,
   },
 }) {
-  const [err, setErr] = useState(null);
   const navigate = useNavigate();
 
   return (
@@ -39,22 +38,11 @@ export default function ReviewCard({
       >
         Read more!
       </button>
-      <div className="review-card__engagement-stats">
-        <div className="review-card__engagemenet-stats-labels">
-          <div className="review-card__comment flex-center">
-            <img
-              className="review-card__icon"
-              src="/comment.png"
-              alt="comment button icon"
-            ></img>
-            <p>{comment_count}</p>
-          </div>
-          <VoteButton votes={votes} review_id={review_id} setErr={setErr} />
-        </div>
-      </div>
-      <p className="review-card__engagement-stats-error error">
-        {err ? "It looks like your vote wasn't counted!" : ""}
-      </p>
+      <ReviewEngagement
+        comment_count={comment_count}
+        votes={votes}
+        review_id={review_id}
+      />
     </section>
   );
 }
