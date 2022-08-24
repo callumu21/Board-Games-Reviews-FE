@@ -32,3 +32,8 @@ export const patchVotes = async (review_id, voteChange) => {
   });
   return response.data;
 };
+
+export const fetchComments = async (review_id) => {
+  const response = await gamesApi.get(`reviews/${review_id}/comments`);
+  return response.data;
+};

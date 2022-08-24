@@ -26,7 +26,7 @@ export default function VoteButton({ review_id, votes, setErr }) {
           className="review-card__icon"
           src={hasVoted ? "/heart.png" : "/like.png"}
           alt="like button icon"
-        ></img>
+        />
       </button>
       <p>{votes + voteCounter}</p>
     </div>
