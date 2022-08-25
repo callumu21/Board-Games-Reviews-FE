@@ -3,6 +3,10 @@
   font-weight: bold;
 }
 
+.error-white {
+  font-size: 0.8rem;
+}
+
 a {
   color: #f9f7f7;
   text-decoration: none;

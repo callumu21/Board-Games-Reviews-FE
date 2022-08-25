@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchComments } from "../utils/api";
 import CommentCard from "./CommentCard";
+import NewComment from "./NewComment";
 
 export default function CommentSection() {
   const { review_id } = useParams();
@@ -20,7 +21,21 @@ export default function CommentSection() {
       <section className="comments">
         <div className="comments-header">
           <h2>Comments</h2>
+          <button
+            className="comments-header__btn"
+            onClick={() => {
+              setAddComment((curr) => !curr);
+            }}
+          >
+            {addComment ? "Exit Comment" : "Add Comment"}
+          </button>
         </div>
+        <NewComment
+          addComment={addComment}
+          setAddComment={setAddComment}
+          setCommentAdded={setCommentAdded}
+          review_id={review_id}
+        />
         {comments.map((comment) => (
           <CommentCard comment={comment} />
         ))}
@@ -31,8 +46,24 @@ export default function CommentSection() {
       <section className="comments">
         <div className="comments-header">
           <h2>Comments</h2>
+          <button
+            className="comments-header__btn"
+            onClick={() => {
+              setAddComment((curr) => !curr);
+            }}
+          >
+            {addComment ? "Exit Comment" : "Add Comment"}
+          </button>
         </div>
-        <p>Nobody has commented yet</p>
+        <p style={{ display: addComment ? "none" : "block" }}>
+          Nobody has commented yet
+        </p>
+        <NewComment
+          addComment={addComment}
+          setAddComment={setAddComment}
+          setCommentAdded={setCommentAdded}
+          review_id={review_id}
+        />
       </section>
     );
   }
