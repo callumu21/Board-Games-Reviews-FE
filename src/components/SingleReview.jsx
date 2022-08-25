@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviewById } from "../utils/api";
 import { formatDate, formatCategories } from "../utils/formattingFunctions";
-import VoteButton from "./VoteButton";
+import ReviewVoteButton from "./ReviewVoteButton";
 import CommentSection from "./CommentSection";
 
 export default function SingleReview() {
@@ -50,7 +50,7 @@ export default function SingleReview() {
                 ></img>
                 <p>{review.comment_count}</p>
               </div>
-              <VoteButton
+              <ReviewVoteButton
                 review_id={review.review_id}
                 votes={review.votes}
                 setErr={setErr}

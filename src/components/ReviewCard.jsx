@@ -1,7 +1,7 @@
 import { formatCategories, formatDate } from "../utils/formattingFunctions";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import VoteButton from "../components/VoteButton";
+import ReviewVoteButton from "../components/ReviewVoteButton";
 
 export default function ReviewCard({
   review: {
@@ -49,7 +49,11 @@ export default function ReviewCard({
             ></img>
             <p>{comment_count}</p>
           </div>
-          <VoteButton votes={votes} review_id={review_id} setErr={setErr} />
+          <ReviewVoteButton
+            votes={votes}
+            review_id={review_id}
+            setErr={setErr}
+          />
         </div>
       </div>
       <p className="review-card__engagement-stats-error error">
