@@ -1,4 +1,4 @@
-import VoteButton from "../components/VoteButton";
+import ReviewVoteButton from "../components/ReviewVoteButton";
 import { useState } from "react";
 
 export default function ReviewEngagement({ comment_count, votes, review_id }) {
@@ -16,7 +16,11 @@ export default function ReviewEngagement({ comment_count, votes, review_id }) {
             ></img>
             <p>{comment_count}</p>
           </div>
-          <VoteButton votes={votes} review_id={review_id} setErr={setErr} />
+          <ReviewVoteButton
+            votes={votes}
+            review_id={review_id}
+            setErr={setErr}
+          />
         </div>
       </div>
       <p className="review-card__engagement-stats-error error">

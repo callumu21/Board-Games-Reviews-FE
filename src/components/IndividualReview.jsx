@@ -1,4 +1,5 @@
 import SingleReviewCard from "./SingleReviewCard";
+import CommentSection from "./CommentSection";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewById } from "../utils/api";
@@ -15,6 +16,7 @@ export default function IndividualReview() {
     return (
       <main className="individual-review">
         <SingleReviewCard review={review} />
+        <CommentSection review={review} />
       </main>
     );
   } else return <p className="loading-message">Fetching review...</p>;

@@ -2,7 +2,7 @@ import "../styles/SingleReviewCard.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { formatDate, formatCategories } from "../utils/formattingFunctions";
-import VoteButton from "./VoteButton";
+import ReviewVoteButton from "./ReviewVoteButton";
 
 export default function SingleReviewCard({ review }) {
   const [err, setErr] = useState(null);
@@ -43,7 +43,7 @@ export default function SingleReviewCard({ review }) {
                 ></img>
                 <p>{review.comment_count}</p>
               </div>
-              <VoteButton
+              <ReviewVoteButton
                 review_id={review.review_id}
                 votes={review.votes}
                 setErr={setErr}
