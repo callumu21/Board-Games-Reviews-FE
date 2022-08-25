@@ -1,23 +1,16 @@
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { getReviewById } from "../utils/api";
+import "../styles/SingleReviewCard.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { formatDate, formatCategories } from "../utils/formattingFunctions";
 import ReviewVoteButton from "./ReviewVoteButton";
-import CommentSection from "./CommentSection";
 
-export default function SingleReview() {
-  const [review, setReview] = useState();
+export default function SingleReviewCard({ review }) {
   const [err, setErr] = useState(null);
-  const { review_id } = useParams();
-
-  useEffect(() => {
-    getReviewById(review_id).then((review) => setReview(review));
-  }, [review_id]);
 
   if (review) {
     return (
       <>
-        <section className="single-review">
+        <section className="single-review__card">
           <div className="single-review__title">
             <h2>{review.title}</h2>
           </div>
@@ -61,7 +54,6 @@ export default function SingleReview() {
             </p>
           </div>
         </section>
-        <CommentSection />
       </>
     );
   }

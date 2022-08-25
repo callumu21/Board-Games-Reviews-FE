@@ -1,3 +1,4 @@
+import "../styles/VoteButton.css";
 import { useState } from "react";
 import { patchVotes } from "../utils/api";
 
@@ -6,9 +7,9 @@ export default function VoteButton({ review_id, votes, setErr }) {
   const [voteCounter, setVoteCounter] = useState(0);
 
   return (
-    <div className="review-card__votes flex-center">
+    <div className="votes flex-center">
       <button
-        className="likes-button"
+        className="votes__button"
         disabled={hasVoted}
         onClick={() => {
           setHasVoted((curr) => !curr);
@@ -23,7 +24,7 @@ export default function VoteButton({ review_id, votes, setErr }) {
         }}
       >
         <img
-          className="review-card__icon"
+          className="votes__icon"
           src={hasVoted ? "/heart.png" : "/like.png"}
           alt="like button icon"
         />

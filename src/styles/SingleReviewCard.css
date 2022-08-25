@@ -1,0 +1,104 @@
+/* Individual Review Cards */
+
+.individual-review {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.single-review__card {
+  align-self: center;
+  padding: 0 10px 10px 10px;
+  width: 90%;
+  background-color: #f9f7f7;
+  border-radius: 2rem;
+}
+
+.single-review__img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.single-review__title {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.single-review__author-info {
+  font-size: 0.8rem;
+}
+
+.single-review__engagement-stats {
+  display: grid;
+  grid-template-areas:
+    "."
+    "error";
+  justify-content: center;
+  margin-right: 20px;
+  column-gap: 20px;
+}
+
+.single-review__engagement-stats-error {
+  grid-area: error;
+  align-self: center;
+  font-size: 0.9rem;
+}
+
+.single-review__engagement-stats-labels {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.single-review__category-link {
+  color: black;
+}
+
+@media only screen and (min-width: 600px) {
+  /* Individual Review */
+
+  .single-review__card {
+    margin-top: 20px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "author img"
+      "body img"
+      "game engagement";
+    column-gap: 30px;
+    padding: 0 20px 20px 20px;
+  }
+
+  .single-review__img {
+    height: 500px;
+    grid-area: img;
+  }
+
+  .single-review__title {
+    grid-area: title;
+    font-size: 1.5rem;
+  }
+
+  .single-review__author-info {
+    font-size: 1rem;
+    grid-area: author;
+  }
+
+  .single-review__body {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    grid-area: body;
+  }
+
+  .single-review__engagement-stats {
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
+
+  .single-review__engagement-stats-labels {
+    justify-content: flex-end;
+  }
+}
