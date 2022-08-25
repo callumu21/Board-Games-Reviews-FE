@@ -22,11 +22,17 @@ export default function NewComment({
           event.preventDefault();
           if (comment.length > 4) {
             setErr("");
-            postComment(review_id, user, comment).then((newComment) => {
-              setCommentAdded(true);
-              setAddComment(false);
-              setComment("");
-            });
+            postComment(review_id, user, comment)
+              .then((newComment) => {
+                setCommentAdded(true);
+                setAddComment(false);
+                setComment("");
+              })
+              .catch(() => {
+                setErr(
+                  "Looks like your comment didn't send. Please try again in a minute."
+                );
+              });
           } else {
             setErr("Comments should be at least five characters long!");
           }
