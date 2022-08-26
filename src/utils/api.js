@@ -4,8 +4,14 @@ const gamesApi = axios.create({
   baseURL: "https://board-games-backend-project.herokuapp.com/api/",
 });
 
-export const getReviews = async () => {
-  const response = await gamesApi.get("reviews");
+export const getReviews = async (
+  order = "desc",
+  sort_by = "created_at",
+  category
+) => {
+  const response = await gamesApi.get(`reviews`, {
+    params: { category: category, order: order, sort_by: sort_by },
+  });
   return response.data;
 };
 
