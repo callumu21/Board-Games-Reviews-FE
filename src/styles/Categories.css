@@ -1,6 +1,29 @@
 /* Category Filter */
 
-.category-filter {
+.Collapsible {
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #dbe2ef;
+  padding-top: 10px;
+  border-radius: 1rem;
+}
+
+.Collapsible__trigger {
+  display: inline-block;
+  width: 100%;
+  color: #112d4e;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.Collapsible__contentOuter {
+  margin-top: 10px;
+  background-color: #f9f7f7;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.filter__category-list {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -20,6 +43,7 @@
   border-radius: 10px;
   border-width: 0;
   font-size: 1rem;
+  border: 1px solid #112d4e;
 }
 
 .category-filter__btn:hover {
@@ -27,10 +51,45 @@
   color: #f9f7f7;
 }
 
+.filter__order-list {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+  gap: 10px;
+}
+
+select {
+  border: 1px solid #112d4e;
+}
+
 @media only screen and (min-width: 600px) {
   .category-filter {
     justify-content: flex-end;
     margin: 1rem 2rem 1rem 0;
     gap: 20px;
+  }
+
+  .Collapsible {
+    text-align: center;
+    margin: 10px 20px 10px 20px;
+    cursor: pointer;
+    background-color: #dbe2ef;
+    padding-top: 10px;
+    border-radius: 1rem;
+  }
+
+  .Collapsible__trigger {
+    display: inline-block;
+    width: 100%;
+    color: #112d4e;
+    font-size: 1.2rem;
+    text-decoration: underline;
+  }
+
+  .Collapsible__contentOuter {
+    margin-top: 10px;
+    background-color: #f9f7f7;
+    border-radius: 0 0 1rem 1rem;
   }
 }

@@ -1,10 +1,9 @@
-import "../styles/Categories.css";
-import { useEffect, useState } from "react";
-import { getCategories } from "../utils/api";
 import { formatCategories } from "../utils/formattingFunctions";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { getCategories } from "../utils/api";
 
-export default function Categories() {
+export default function CategorySelect() {
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState("");
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ export default function Categories() {
 
   return (
     <form
-      className="category-filter"
+      className="filter__category-list"
       onSubmit={(event) => {
         event.preventDefault();
         if (category === "all") {
