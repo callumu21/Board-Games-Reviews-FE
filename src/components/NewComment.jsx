@@ -20,12 +20,12 @@ export default function NewComment({
         className="new-comment__form"
         onSubmit={(event) => {
           event.preventDefault();
-          if (comment.length > 4) {
+          if (comment.length > 4 && addComment) {
+            setAddComment(false);
             setErr("");
             postComment(review_id, user, comment)
               .then((newComment) => {
                 setCommentAdded(true);
-                setAddComment(false);
                 setComment("");
               })
               .catch(() => {

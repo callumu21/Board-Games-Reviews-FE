@@ -17,6 +17,9 @@ export default function Reviews() {
     });
   }, [order, sort_by]);
 
+  if (reviews.length === 0)
+    return <p className="loading-message">Loading reviews...</p>;
+
   return (
     <main>
       <SortAndFilter setSearchParams={setSearchParams} />

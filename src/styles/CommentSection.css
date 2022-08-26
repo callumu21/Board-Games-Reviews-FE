@@ -25,10 +25,25 @@
 .comment-card__author-info {
   grid-area: author;
   display: flex;
-  font-size: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.comment-card__delete-btn {
+  border-radius: 0.5rem;
+  padding: 5px;
+  margin-right: 20px;
+  width: 80px;
+  height: 30px;
+  background-color: #3f72af;
+  border: none;
+  cursor: pointer;
+  color: #f9f7f7;
 }
 
 .comment-card__body {
+  margin-top: 20px;
   grid-area: body;
 }
 
@@ -130,6 +145,27 @@
   .comments {
     justify-content: space-between;
     margin: 3rem 17rem 4rem 17rem;
+  }
+
+  .comment-card__author-info {
+    grid-area: author;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .comment-card__author-text {
+    display: flex;
+    gap: 4px;
+  }
+
+  .comment-card__delete-btn {
+    border-radius: 0.5rem;
+    padding: 5px;
+    margin-right: 20px;
+    width: 100px;
+    height: 30px;
   }
 
   .new-comment {

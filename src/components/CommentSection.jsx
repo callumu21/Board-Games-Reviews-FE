@@ -10,11 +10,14 @@ export default function CommentSection() {
   const [comments, setComments] = useState([]);
   const [addComment, setAddComment] = useState(false);
   const [commentAdded, setCommentAdded] = useState(false);
+  const [deleteComment, setDeleteComment] = useState(false);
 
+  console.log(deleteComment);
   useEffect(() => {
     fetchComments(review_id).then((comments) => setComments(comments.comments));
     setCommentAdded(false);
-  }, [review_id, commentAdded]);
+    setDeleteComment(false);
+  }, [review_id, commentAdded, deleteComment]);
 
   if (comments.length > 0) {
     return (
@@ -37,7 +40,11 @@ export default function CommentSection() {
           review_id={review_id}
         />
         {comments.map((comment) => (
-          <CommentCard comment={comment} />
+          <CommentCard
+            comment={comment}
+            deleteComment={deleteComment}
+            setDeleteComment={setDeleteComment}
+          />
         ))}
       </section>
     );
