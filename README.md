@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Board Game Review Front-End Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a front-end API repo for a board games rating and discussion website built with React. The website allows a user to view a list of reviews, sort and filter reviews, upvote them, and add/delete comments. It also features error-handling for form submission and invalid slugs/endpoints.
 
-## Available Scripts
+A live version of the website is hosted at:\
+[https://6308e778b4acbe39868d3f26--board-games-reviews-fe-project.netlify.app]
 
-In the project directory, you can run:
+The back-end API can be accessed here:\
+Repo: [https://github.com/callumu21/Board-Games-Reviews-BE]\
+Hosted at: [https://board-games-backend-project.herokuapp.com/api]
 
-### `npm start`
+## Current routes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+/                               Home
+/reviews                        All reviews
+/reviews:review_id              Review with comments
+/reviews/category/:category     Reviews filtered by category
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Stories
 
-### `npm test`
+As a user, I am able to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- view a list of all reviews
+- sort the list by number of votes, comments, or date
+- order the list in ascending or descending order
+- filter reviews by category
+- view an individual review
+- view a list of comments for a single review
+- vote on a review and see it immediately change
+- post a new comment as a default user
+- delete my own comment
 
-### `npm run build`
+Error-handling:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Users receive a 404 page for non-existent endpoints/slugs
+- Users cannot post a comment less than 5 characters
+- Users receive feedback if an upvote was not processed
+- Users cannot accidentally submit the same comment more than once
+- Users cannot accidentally try to delete the same comment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Future Plans
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Implement a mock login screen for users
+- Allow users to add a new review
+- Allow users to delete a review
+- Allow users to upvote comments
+- Add pagination of reviews so more than 10 can be seen
+- Add custom page limit so that more than 10 can be seen at once
+- Allow users to edit their own reviews
+- Allow users to edit their own comments
 
-### `npm run eject`
+## Specifications and running locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Tested on Node version 18.5.0
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run locally, clone this entire repo into a local folder, run 'npm install' in the terminal to install all dependencies and then type 'npm start' to start the app in a browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+$ git clone https://github.com/callumu21/Board-Games-Reviews-FE
+$ cd Board-Games-Reviews-FE
+$ npm install
+$ npm start
+```
