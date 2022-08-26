@@ -6,6 +6,7 @@ import IndividualReview from "./components/IndividualReview";
 import { useState } from "react";
 import { UserContext } from "./contexts/User";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   const [user, setUser] = useState({
@@ -28,6 +29,7 @@ function App() {
               path="/reviews/category/:category"
               element={<CategoryReviews className="reviews" />}
             />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </UserContext.Provider>
