@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const gamesApi = axios.create({
-  baseURL: "https://board-games-backend-project.herokuapp.com/api/",
+  baseURL: "https://board-games-reviews.cyclic.app/api",
 });
 
 export const getReviews = async (
