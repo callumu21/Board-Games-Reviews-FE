@@ -3,7 +3,7 @@
 This is a front-end API repo for a board games rating and discussion website built with React. The website allows a user to view a list of reviews, sort and filter reviews, upvote them, and add/delete comments. It also features error-handling for form submission and invalid slugs/endpoints.
 
 A live version of the website is hosted at:\
-[https://6308e778b4acbe39868d3f26--board-games-reviews-fe-project.netlify.app]
+[https://board-games-reviews-fe-project.netlify.app/]
 
 The back-end API can be accessed here:\
 Repo: [https://github.com/callumu21/Board-Games-Reviews-BE]\
