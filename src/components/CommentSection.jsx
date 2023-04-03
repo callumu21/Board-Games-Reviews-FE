@@ -12,7 +12,6 @@ export default function CommentSection() {
   const [commentAdded, setCommentAdded] = useState(false);
   const [deleteComment, setDeleteComment] = useState(false);
 
-  console.log(deleteComment);
   useEffect(() => {
     fetchComments(review_id).then((comments) => setComments(comments.comments));
     setCommentAdded(false);
@@ -44,6 +43,7 @@ export default function CommentSection() {
             comment={comment}
             deleteComment={deleteComment}
             setDeleteComment={setDeleteComment}
+            key={comment.comment_id}
           />
         ))}
       </section>

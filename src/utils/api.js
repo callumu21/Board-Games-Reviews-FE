@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const gamesApi = axios.create({
-  baseURL: "https://board-games-reviews.cyclic.app/api",
+  baseURL: "https://board-games-review-be.onrender.com/api",
 });
 
 export const getReviews = async (
