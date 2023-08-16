@@ -7,7 +7,7 @@ A live version of the website is hosted at:\
 
 The back-end API can be accessed here:\
 Repo: [https://github.com/callumu21/Board-Games-Reviews-BE]\
-Hosted at: [https://board-games-backend-project.herokuapp.com/api]
+Hosted at: [https://board-games-review-be.onrender.com/api]
 
 ## Current routes
 
